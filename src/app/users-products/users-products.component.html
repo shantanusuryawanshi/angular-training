@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-3" *ngFor="let item of mixData">
+        <div class="box">
+            <h5>{{item.name}} | Age - {{item.id}} </h5>
+            <ng-container *ngIf="item.id >= 5">
+                <p><strong>Products</strong></p>
+                <!-- {{item.products[2].name}} -->
+                <ul>
+                    <li *ngFor="let element of item.products">
+                        {{element.id}} - {{element.name}}
+                    </li>
+                </ul>
+            </ng-container>
+        </div>
+    </div>
+</div>

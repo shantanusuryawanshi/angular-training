@@ -1,0 +1,46 @@
+<h2>Template Driven Forms</h2>
+<form method="post" class="form-wrapper" #userForm="ngForm" (ngSubmit)="handleFormSubmit(userForm)">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" required name="txtName" class="form-control" placeholder="Your Name *" ngModel={{userFormObj.name}} />
+            </div>
+            <div class="form-group">
+                <input type="text" required name="txtEmail" class="form-control" placeholder="Your Author *" ngModel={{userFormObj.email}} />
+            </div>
+            <div class="form-group">
+                <input type="text" required name="txtPhone" class="form-control" placeholder="Your Phone Number *" ngModel={{userFormObj.phone}} />
+            </div>
+            <div class="form-group">
+                <input *ngIf="!isEdited" type="submit" name="btnSubmit" class="btn btn-primary" [disabled]="!userForm.valid" value="Submit" />
+                <input *ngIf="isEdited" type="submit" name="btnSubmit" class="btn btn-primary" [disabled]="!userForm.valid" value="Update" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <textarea name="txtMsg" required ngModel={{userFormObj.desc}} class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+
+<table class="table table-responsive">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Author Name</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let item of userForm2; let ind = index">
+        <td>{{item.id}}</td>
+        <td>{{item.author}}</td>
+        <td>{{item.title}}</td>
+        <td>
+            <span (click)="handleEdit(item, ind)">Edit</span>
+            <span (click)="handleDelete(item)">Delete</span>
+        </td>
+    </tr>
+    <tr *ngIf="userForm2.length == 0">
+        <td>No data available.</td>
+    </tr>
+</table>

@@ -1,0 +1,21 @@
+<div class="card mb-4 box-shadow">
+    <img class="card-img-top" src="https://via.placeholder.com/350x250" alt="" />
+    <div class="card-body">
+        <button (click)="closeCard()">Close</button>
+        <h3>{{employeeData.name}}</h3>
+        <p class="card-text">{{employeeData.desc}}</p>
+        <p>Salary : {{salary}}</p>
+        <small>Time : {{utils.getCurrentTime()}}</small>
+        <p [ngClass]="employeeData.isPassOut ? 'alert alert-success' : 'alert alert-danger'">
+            <span *ngIf="employeeData.isPassOut">Pass</span>
+            <span *ngIf="!employeeData.isPassOut">Fail</span>
+        </p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button type="button" (click)="sendData(employeeData)" class="btn btn-sm btn-primary">View Employee</button>
+                <button type="button" (click)="addToCart(employeeData)" class="btn btn-sm btn-primary">Add To Cart</button>
+            </div>
+            <small class="text-muted">9 mins</small>
+        </div>
+    </div>
+</div>

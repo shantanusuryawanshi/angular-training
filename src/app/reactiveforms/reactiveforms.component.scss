@@ -1,0 +1,11 @@
+.form-wrapper {
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .ng-invalid {
+        border: 1px solid red;
+    }
+    .ng-valid {
+        border: 1px solid green;
+    }
+}

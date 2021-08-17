@@ -1,0 +1,49 @@
+<header-sagar></header-sagar>
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<article class="content-wrapper">
+    <div class="container">
+        <router-outlet></router-outlet>
+
+        <!-- <div class="selected-employee" *ngIf="selectedData">
+            <div [ngStyle]="{'background-image': selectedData.isPassOut ? 'url('+selectedData.img+')' : 'red'}">
+                <h3>{{selectedData.name}} - {{selectedData.isPassOut}}</h3>
+                <p>{{selectedData.desc}}</p>
+                <hr />
+            </div>
+        </div>
+        <div *ngIf="!hiddenCard" class="alert alert-info">
+            Card Window is in hidded state. <button (click)="closeCardWindow(true)" class="btn btn-success">Open Window</button>
+        </div>
+        <hr />
+        <h2>Data From Message Service Variable {{messageService.allCartsProducts.length}}</h2>
+        <ul>
+            <li *ngFor="let item of messageService.allCartsProducts">
+                {{item.name}}
+            </li>
+        </ul>
+        <hr />
+        <h2>Mix Data (Users Products) Component</h2>
+        <app-users-products></app-users-products>
+        <hr />
+        <h2>Product Component</h2>
+        <app-products></app-products>
+        <hr />
+
+        <h2>Users Listing Component</h2>
+        <app-userlisting></app-userlisting>
+        <hr />
+        <h2>Card Component</h2>
+        <div class="card-wrapper row" *ngIf="hiddenCard">
+            <div class="col-md-4" *ngFor="let singleEmployee of employess">
+                <app-card (closeEvent)="closeCardWindow($event)" (selectedEmployee)="getSelectedEmployeeData($event)" [salary]="sallary" [employeeData]="singleEmployee"></app-card>
+            </div>
+
+        </div> -->
+    </div>
+</article>
+<app-footer></app-footer>

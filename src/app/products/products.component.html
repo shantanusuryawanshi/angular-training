@@ -1,0 +1,20 @@
+<div class="row">
+    <!-- Conditional UI Rendering -->
+    <ng-container *ngFor="let element of productsData; let i = index">
+        <!-- <div class="col-6" *ngIf="element.status == 'Sold Out'"> -->
+        <div class="col-6" *ngIf="i >= 1">
+            <div class="product-box">
+                <small>ID: {{element.id}}</small>
+                <h5>{{element.name}} - {{i}}</h5>
+                <p>Availability: {{element.status || "Available"}}</p>
+                <em>Date: {{element.updated|date}}</em>
+                <p>{{element.desc}}</p>
+                <!-- <a class="nav-link" routerLinkActive="active" routerLink="/product-detail/product1">Product {{element.id}}</a> -->
+                <!-- <a class="nav-link" routerLinkActive="active" routerLink="/product-detail/product1">Product {{element.id}}</a> -->
+                <button class="btn btn-warning" readOnly>${{element.price}}</button>
+                <button class="btn btn-success" (click)="handleAddToCart(element)">Add to Cart</button>
+                <button class="btn btn-success" (click)="redirectToDetail(element)">Read More</button>
+            </div>
+        </div>
+    </ng-container>
+</div>

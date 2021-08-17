@@ -1,0 +1,8 @@
+<p>dashboard works!</p>
+<h2>Slider</h2>
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <h3>{{slide.title}}</h3>
+        <img src="{{ slide.img }}" alt="" width="100%">
+    </div>
+</ngx-slick-carousel>
